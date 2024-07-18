@@ -1,0 +1,71 @@
+/*Seccion sobre productos*/
+.imagenesProductos{
+    /*Ponerlos en fila*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*Espacio entre articulos*/
+    padding: 50px;
+    gap: 20px;
+}
+
+.item{
+    border-radius: 10px;
+}
+
+    /*Controlar el tamaño imagenes producto*/
+.item img{
+    width: 100%;
+    height: 200px;
+     /*Adaptar imagen*/
+    object-fit: cover;
+    transition: all .5s;
+}
+
+        /*Responte cuando tiene el cursor encima*/
+.item:hover{
+    box-shadow: 0 10px 20px rgb(0, 0, 0, 0.20);
+}
+
+.item:hover figure{
+    overflow: hidden;
+}
+
+.item:hover img{
+    transform: scale(1.2);
+}
+
+.info_product{
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    /*Espacio entre lineas*/
+    gap: 10px;
+}
+
+.precio{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.info_product button{
+    border: none;
+    background: none;
+    background-color: black;
+    color: white;
+    /*Espacio para las letras*/
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+
+/*Seccion sobre el negocio*/
+.sobre_negocio{
+    padding: 20px;
+    
+}
+    /*Centrar la imagen*/
+.sobre_negocio img{
+    display: block;
+    margin: auto;
+}
