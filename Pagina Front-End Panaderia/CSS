@@ -1,3 +1,114 @@
+/*Header*/
+.contador_productos{
+    /*Posicion*/
+    position: absolute;
+    top: 55%;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /*Proporciones*/
+    width: 25px;
+    height: 25px;
+    
+    /*Color*/
+    background-color: #000;
+    color: #fff;
+
+}
+
+#contador{
+    font-size: 12px;
+}
+
+.contenedor-cart-product{
+    /*Posicion*/
+    position: absolute;
+    top: 50px;
+    right: 0;
+        /*establecer la visibilidad y el posicionamiento del contenido*/
+    z-index: 1;
+
+    /*Color*/
+    background-color: #fff;
+    width: 400px;
+
+    /*Forma*/
+    box-shadow: 0 10px 20px rgb(0, 0, 0, 0.20);
+    border-radius: 10px;
+}
+
+.product-cart{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    align-items: center;
+    /*raya*/
+    border-bottom: 1px solid rgb(0, 0, 0, 0.20);
+}
+
+.hidden-cart{
+    display: none  ;
+}
+
+.info-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.titulo-product-carrito{
+font-size: 20px;
+}
+
+.precio-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.carrito-total{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+.carrito-total h3{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.total-pagar{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.icono-close{
+    width: 40px;
+    height: 25px;
+}
+
+/*Icono cambia color(cursor encima)*/
+.icono-close:hover{
+    stroke: red;
+    cursor: pointer;
+}
+.icono:hover{
+    stroke: aqua;
+    cursor: pointer;
+}
+
+/*********************************************************/
+
+
 /*Seccion sobre productos*/
 .imagenesProductos{
     /*Ponerlos en fila*/
