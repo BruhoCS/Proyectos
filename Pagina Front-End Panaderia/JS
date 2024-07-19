@@ -1,1 +1,4 @@
-(Aun por realizar)
+//carrito
+const bttCart = document.querySelector('.container-icon');
+
+bttCart.addEventListener(click , '')
