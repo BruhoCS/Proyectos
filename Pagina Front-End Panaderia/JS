@@ -1,4 +1,8 @@
+(Aun no funciona)
 //carrito
-const bttCart = document.querySelector('.container-icon');
+const btnCart = document.querySelector('.carrito');
+const containerCartsProducts = document.querySelector('.contenedor-cart-product');
 
-bttCart.addEventListener(click , '')
+btnCart.addEventListener('click', () => {
+    containerCartsProducts.classList.toggle('hidden-cart');
+});
