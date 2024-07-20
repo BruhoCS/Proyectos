@@ -49,7 +49,7 @@
 }
 
 .hidden-cart{
-    display: none  ;
+    display: none;
 }
 
 .info-product{
@@ -169,10 +169,18 @@ font-size: 20px;
     cursor: pointer;
 }
 
+/****************************************************/
 
 /*Seccion sobre el negocio*/
+.info_empresa{
+    color: #000;
+    /*Dejar espacio entre lineas*/
+    line-height: 5;
+}
+
 .sobre_negocio{
-    padding: 20px;
+    padding: 50px;
+    background-color: #905010;
     
 }
     /*Centrar la imagen*/
@@ -180,3 +188,34 @@ font-size: 20px;
     display: block;
     margin: auto;
 }
+
+.nombreEmp{
+    text-align: center;
+}
+
+.info_empresa p{
+    line-height: normal;
+}
+
+
+/****************************************************/
+.Contactos{
+    background-color: #191827;
+}
+
+.telf_correo{
+    text-align: center;
+    color: #905010;
+}
+
+.redes{
+    /*Posicion*/
+    padding: 20px;
+    /*Color*/
+    color: #905010;
+    /*Poner en fila*/
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    
+}
+
