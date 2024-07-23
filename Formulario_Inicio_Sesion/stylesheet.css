@@ -1,0 +1,159 @@
+body{
+    padding: 0%;
+    margin: 0;
+    font-family:cursive ;
+    background:linear-gradient(150deg ,  #00ffff ,#c90469);
+    height: 100vh;
+}
+
+.bloque{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    font-size: 30px;
+    border-bottom: 1px solid silver;
+}
+/*Insertar nomrbe user y contraseña*/
+form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .user_gmail{
+    position: relative;
+    border-bottom: 2px solid silver;
+    margin: 30px 0;
+}
+form .user_contr{
+    position: relative;
+    border-bottom: 2px solid silver;
+    margin: 30px 0;
+}
+
+.user_gmail input{
+    padding: 0 5px;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.user_contr input{
+    padding: 0 5px;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.user_gmail label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    /*animacion del texto*/
+    transition: .5s;
+}
+.user_contr label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+/*animaciones*/
+.user_gmail span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #00ffff;
+}
+.user_contr span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #c90469;
+}
+
+.user_gmail input:focus ~label{
+    top: -5px;
+    color: #c90469;
+}
+.user_contr input:focus ~label{
+    top: -5px;
+    color: #c90469;
+}
+
+.user_gmail input:focus~span::before{
+    width: 100%;
+
+}
+
+/*Recordar contraseña*/
+.olvido{
+    margin: -5px 0 20px 5px;
+    color: blue;
+    cursor:pointer;
+}
+
+.olvido hover{
+    text-decoration:underline ;
+}
+/*Boton enviar*/
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 10px;
+    background-color: #00ffff;
+    color: black;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    border-color: purple;
+    transition: .5s;
+}
+/*Registrarse*/
+.registrar{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+
+.registrar a{
+    color: blue;
+    text-decoration: none;
+}
+
+.registrar a:hover{
+    text-decoration: underline;
+}
