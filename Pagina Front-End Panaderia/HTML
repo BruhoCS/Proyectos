@@ -42,11 +42,10 @@
                     <a class="nav-link" href="#productos">Productos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " aria-disabled="flase" href="#Contacto">Contacto</a>
+                    <a class="nav-link " aria-disabled="false" href="#Contacto">Contacto</a>
                   </li>
                 </ul>
               <!--Icono del carrito-->
-              <header>
               <div class="carrito">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="icono" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
@@ -75,8 +74,18 @@
                             <span class="total-pagar">200$</span>
                         </div>
                   </div>
-                </header>
-                </div>
+                  <!--Codigo JavaScript-->
+                  <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const btnCart = document.querySelector('.carrito');
+                        const containerCartsProducts = document.querySelector('.contenedor-cart-product');
+            
+                        btnCart.addEventListener('click', () => {
+                            containerCartsProducts.classList.toggle('hidden-cart');
+                        });
+                    });
+                </script>
+            </div>
             </div>
           </nav>
          <!--Seccion Productos-->
@@ -219,7 +228,6 @@
                 </p>
             </div>
         </section>
-        <script src="index.js"></script>
     </body>
 
 </html>
