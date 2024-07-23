@@ -17,8 +17,7 @@
         <!--Icono de boostrap-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         
-        <!--Enlaces JS y CSS-->
-        <script src="./index.js"></script> 
+        <!--Enlace CSS-->
         <link href="index.css" rel="stylesheet"/>
     </head>
     <body>
