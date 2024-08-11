@@ -136,7 +136,7 @@ function create () {
     this.Enemigo = this.physics.add.group()
     this.Enemigo = this.physics.add.sprite(230 , config.height -150 , 'SantaCompa').anims.play('enemigo-idle' , true)
     .setScale(1)
-    
+
     //"Colisiones"
          //limites del mundo
         this.physics.world.setBounds(0/*x*/ , 0 /*Y*/, 2000/*ancho*/ ,config.height )
@@ -156,8 +156,7 @@ function create () {
                 setTimeout(() =>{
                     Enemigo.destroy()
                 },450)
-                
-                
+                  
             }else{
                 //Muere MarioGaiteiro
             }
