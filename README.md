@@ -1,2 +1,3 @@
 # Proyectos
-Aqui subire todos los proyectos realizados individualmente por mi
+Bienvenido a mis proyectos :) 
+Estos trabajos fueron o son realizados con un objetivo de aprendizaje autodidacta. 
