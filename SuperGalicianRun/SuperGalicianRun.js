@@ -51,8 +51,8 @@ function preload () {
     //Cargar enemigos
     this.load.spritesheet(
         'SantaCompa',
-        'assets/Personajes/Enemigos/santaCompaña.png',
-        { frameWidth:64 , frameHeight:45}
+        'assets/Personajes/Enemigos/SantaCompa.png',
+        { frameWidth:16 , frameHeight:16}
         
     )
         //Muerte enemigo
@@ -135,7 +135,7 @@ function create () {
         //Mostrar enemigo
     this.Enemigo = this.physics.add.group()
     this.Enemigo = this.physics.add.sprite(230 , config.height -150 , 'SantaCompa').anims.play('enemigo-idle' , true)
-    .setScale(1)
+    .setScale(1.2)
 
     //"Colisiones"
          //limites del mundo
@@ -145,7 +145,7 @@ function create () {
         //Colision enemigo-suelo
         this.physics.add.collider(this.Enemigo , this.suelo)
         //Colision Galego-enemigo
-        this.physics.add.collider(this.Mario , this.Enemigo , onHitEnemy)
+        this.physics.add.collider(this.Mario , this.Enemigo , onHitEnemy ,null ,this)
 
         function onHitEnemy(Mario , Enemigo){
             console.log('Enemigo muerto')
@@ -159,6 +159,7 @@ function create () {
                   
             }else{
                 //Muere MarioGaiteiro
+                GalegoMorre(this)
             }
         }
     //camara
@@ -173,8 +174,8 @@ function create () {
         this.percebe.create(150,150,'percebe').anims.play('giro' , true)
         this.percebe.create(300,170,'percebe').anims.play('giro' , true)
         this.percebe.create(610,170,'percebe').anims.play('giro' , true)
-        this.percebe.create(630,170,'percebe').anims.play('giro' , true)
         this.percebe.create(650,170,'percebe').anims.play('giro' , true)
+        this.percebe.create(700,170,'percebe').anims.play('giro' , true)
         //colision Personaje-percebe
         this.physics.add.overlap(this.Mario, this.percebe);
         //Colectar percebes
@@ -223,7 +224,7 @@ function create () {
             'Mario' ,
             { start: 1 , end: 3 }
     ),
-    frameRate: 12,
+    frameRate: 10,
     repeat: -1
     })
         //idle
@@ -310,13 +311,31 @@ function update () {
     }
 
     if(this.Mario.y >= config.height){
-        this.Mario.isDead = true 
-        this.Mario.anims.play('c-dead' , true)
-        this.Mario.setCollideWorldBounds(false)
-
+        GalegoMorre(this)
         //Respawnear
         setTimeout ( () => {
             this.scene.restart()
         }, 700)
     }
+}
+
+//Funcion morte
+function GalegoMorre ({Mario , scene}){
+
+    if(Mario.isDead) return
+
+    Mario.isDead = true,
+    Mario.anims.play('c-dead')
+    Mario.setCollideWorldBounds(false)
+
+    Mario.body.checkCollision.none = true
+    
+    setTimeout(() => {
+        Mario.setVelocityY(-150)
+        Mario.setVelocityX(-20)
+    },100)
+
+    setTimeout(() => {
+        scene.restart()
+    },900)
 }
