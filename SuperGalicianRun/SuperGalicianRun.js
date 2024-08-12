@@ -136,7 +136,6 @@ function create () {
     this.Enemigo = this.physics.add.group()
     this.Enemigo = this.physics.add.sprite(230 , config.height -150 , 'SantaCompa').anims.play('enemigo-idle' , true)
     .setScale(1.2)
-
     //"Colisiones"
          //limites del mundo
         this.physics.world.setBounds(0/*x*/ , 0 /*Y*/, 2000/*ancho*/ ,config.height )
@@ -329,7 +328,7 @@ function GalegoMorre ({Mario , scene}){
     Mario.setCollideWorldBounds(false)
 
     Mario.body.checkCollision.none = true
-    
+
     setTimeout(() => {
         Mario.setVelocityY(-150)
         Mario.setVelocityX(-20)
