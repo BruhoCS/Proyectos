@@ -61,7 +61,7 @@ function preload () {
     //Cargar enemigos
     this.load.spritesheet(
         'SantaCompa',
-        'assets/Personajes/Enemigos/SantaCompa.png',
+        'assets/Personajes/Enemigos/SantaCompaña.png',
         { frameWidth:16 , frameHeight:16}
         
     )
@@ -205,11 +205,16 @@ function create () {
     .setGravityY(300)
 
         //Mostrar enemigo
-        this.Enemigo = this.physics.add.group()
-            //Uso de for para hacer aparecer varios enemigos
-        for(var i = 0;i < config.width;i++){
-            var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-            this.Enemigo.create(x , 1)
+        this.Enemigo = this.physics.add.group({
+            key: 'SantaCompa'
+        });
+        //Variables para inicio de spawn y separacion entre los enemigos
+        var distanciaEntreEnemigos = 200;
+        var posicionInicialX = 200;
+        //Uso de for para hacer aparecer varios enemigos
+        for(var i = 0;i < 2000 / distanciaEntreEnemigos;i++){
+            var x = posicionInicialX +i * distanciaEntreEnemigos;
+            this.Enemigo.create(x , 20)
         }
     
     
