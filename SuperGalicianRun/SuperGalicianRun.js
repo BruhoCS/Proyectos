@@ -42,6 +42,16 @@ function preload () {
         'suelo1',
         'assets/Tierra/pixil-frame-0 (78).png'
     )
+    this.load.image(
+        'suelo2',
+        'assets/Tierra/chao laranja.png'
+    )
+    //Cargar arboles
+    this.load.spritesheet(
+        'arbol1',
+        'assets/Tierra/árboles/Image10000.png',
+        { frameWidth: 16 , frameHeight:32}
+    )
     //Cargar personaje
     this.load.spritesheet(
         'Mario',
@@ -79,7 +89,6 @@ function create () {
     this.add.image(2144, 244, 'Cielo')
     .setScale(0.50)
     
-
      //Mostrar Suelo  
             //Este 'config' sale de la primera constante que se escribió  
     this.suelo = this.physics.add.staticGroup()
@@ -125,7 +134,70 @@ function create () {
         .create(992, config.height-10,'suelo1')
         .setOrigin(0 , 0.5)
         .refreshBody()
-        
+    this.suelo
+        .create(1190, config.height-10,'suelo1')
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.suelo
+        .create(1298, config.height-10,'suelo1')
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.suelo
+        .create(1396, config.height-10,'suelo1')
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.suelo
+        .create(1494, config.height-10,'suelo1')
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.suelo
+        .create(1592, config.height-10,'suelo1')
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.suelo
+        .create(1690, config.height-10,'suelo1')
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+
+        //Mostrar arboles
+    this.arbol = this.physics.add.staticGroup()
+    this.arbol.create(150,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.arbol.create(250,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.arbol.create(350,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.arbol.create(450,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.arbol.create(650,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.arbol.create(750,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.arbol.create(850,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.arbol.create(950,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+    this.arbol.create(1050,config.height -83 , 'arbol1')
+        .setScale(1.5)
+        .setOrigin(0 , 0.5)
+        .refreshBody()
+
         //Mostrar Personaje
     this.Mario = this.physics.add.sprite(50 , 205 , 'Mario')
     .setOrigin(0 , 1)
@@ -133,12 +205,18 @@ function create () {
     .setGravityY(300)
 
         //Mostrar enemigo
-    this.Enemigo = this.physics.add.group()
-    this.Enemigo = this.physics.add.sprite(230 , config.height -150 , 'SantaCompa').anims.play('enemigo-idle' , true)
-    .setScale(1.2)
+        this.Enemigo = this.physics.add.group()
+        for(var i = 0;i < config.width;i++){
+            var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
+            this.Enemigo.create(x , 1)
+        }
+    
+    
     //"Colisiones"
          //limites del mundo
         this.physics.world.setBounds(0/*x*/ , 0 /*Y*/, 2000/*ancho*/ ,config.height )
+        //Colision arbol-suelo
+        this.physics.add.collider(this.arbol , this.suelo)
         //Colision galego-suelo
         this.physics.add.collider(this.Mario , this.suelo)
         //Colision enemigo-suelo
