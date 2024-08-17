@@ -206,6 +206,7 @@ function create () {
 
         //Mostrar enemigo
         this.Enemigo = this.physics.add.group()
+            //Uso de for para hacer aparecer varios enemigos
         for(var i = 0;i < config.width;i++){
             var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
             this.Enemigo.create(x , 1)
