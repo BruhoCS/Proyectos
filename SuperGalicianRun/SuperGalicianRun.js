@@ -428,3 +428,5 @@ function GalegoMorre ({Mario , scene}){
         scene.restart()
     },900)
 }
+
+
