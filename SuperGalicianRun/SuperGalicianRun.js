@@ -62,7 +62,7 @@ function preload () {
     this.load.spritesheet(
         'SantaCompa',
         'assets/Personajes/Enemigos/SantaCompaña.png',
-        { frameWidth:64 , frameHeight:64}
+        { frameWidth:64 , frameHeight:45}
         
     )
         //Muerte enemigo
@@ -205,7 +205,10 @@ function create () {
     .setGravityY(300)
 
         //Mostrar enemigo
-        this.Enemigo = this.physics.add.group({});
+        this.Enemigo = this.physics.add.group({
+            repeat: 9, // Número de enemigos menos uno
+            setXY: { x: 200, y: config.height - 26, stepX: 200 } 
+        });
        
         //Variables para inicio de spawn y separacion entre los enemigos
         var distanciaEntreEnemigos = 200;
@@ -217,6 +220,12 @@ function create () {
             .setGravityY(300)
             .setOrigin(0 , 2)
         }
+
+        this.Enemigo.children.iterate(function (child) {
+            child.setBounceY(Phaser.Math.FloatBetween(0.2, 0.4));
+            child.anims.play('enemigo-idle', true);
+        });
+
     //"Colisiones"
          //limites del mundo
         this.physics.world.setBounds(0/*x*/ , 0 /*Y*/, 2000/*ancho*/ ,config.height )
