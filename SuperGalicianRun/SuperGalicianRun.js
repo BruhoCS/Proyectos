@@ -205,26 +205,18 @@ function create () {
     .setGravityY(300)
 
         //Mostrar enemigo
-        this.Enemigo = this.physics.add.group({
-            key: 'SantaCompa',
-            repeat: 9, // Número de enemigos menos uno
-            setXY: { x: 200, y: 20, stepX: 200 }
-        });
-        this.Enemigo.children.iterate(function (child) {
-            child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
-            child.anims.play('enemigo-idle', true);
-        });
-    
+        this.Enemigo = this.physics.add.group({});
+       
         //Variables para inicio de spawn y separacion entre los enemigos
         var distanciaEntreEnemigos = 200;
         var posicionInicialX = 200;
         //Uso de for para hacer aparecer varios enemigos
         for(var i = 0;i < 2000 / distanciaEntreEnemigos;i++){
             var x = posicionInicialX +i * distanciaEntreEnemigos;
-            this.Enemigo.create(x , 20).play('enemigo-idle', true)
+            this.Enemigo.create(x , 20,'SantaCompa').anims.play('enemigo-idle', true)
+            .setGravityY(300)
+            .setOrigin(0 , 2)
         }
-    
-    
     //"Colisiones"
          //limites del mundo
         this.physics.world.setBounds(0/*x*/ , 0 /*Y*/, 2000/*ancho*/ ,config.height )
