@@ -205,10 +205,7 @@ function create () {
     .setGravityY(300)
 
         //Mostrar enemigo
-        this.Enemigo = this.physics.add.group({
-            repeat: 9, // Número de enemigos menos uno
-            setXY: { x: 200, y: config.height - 26, stepX: 200 } 
-        });
+        this.Enemigo = this.physics.add.group({});
        
         //Variables para inicio de spawn y separacion entre los enemigos
         var distanciaEntreEnemigos = 200;
