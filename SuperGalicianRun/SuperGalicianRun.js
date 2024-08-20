@@ -61,8 +61,8 @@ function preload () {
     //Cargar enemigos
     this.load.spritesheet(
         'SantaCompa',
-        'assets/Personajes/Enemigos/SantaCompaña.png',
-        { frameWidth:64 , frameHeight:45}
+        'assets/Personajes/Enemigos/SantaCompa.png',
+        { frameWidth:16 , frameHeight:16}
         
     )
         //Muerte enemigo
@@ -135,27 +135,27 @@ function create () {
         .setOrigin(0 , 0.5)
         .refreshBody()
     this.suelo
-        .create(1190, config.height-10,'suelo1')
+        .create(1150, config.height-10,'suelo1')
         .setOrigin(0 , 0.5)
         .refreshBody()
     this.suelo
-        .create(1298, config.height-10,'suelo1')
+        .create(1248, config.height-10,'suelo1')
         .setOrigin(0 , 0.5)
         .refreshBody()
     this.suelo
-        .create(1396, config.height-10,'suelo1')
+        .create(1346, config.height-10,'suelo1')
         .setOrigin(0 , 0.5)
         .refreshBody()
     this.suelo
-        .create(1494, config.height-10,'suelo1')
+        .create(1444, config.height-10,'suelo1')
         .setOrigin(0 , 0.5)
         .refreshBody()
     this.suelo
-        .create(1592, config.height-10,'suelo1')
+        .create(1542, config.height-10,'suelo1')
         .setOrigin(0 , 0.5)
         .refreshBody()
     this.suelo
-        .create(1690, config.height-10,'suelo1')
+        .create(1640, config.height-10,'suelo1')
         .setOrigin(0 , 0.5)
         .refreshBody()
 
@@ -213,9 +213,10 @@ function create () {
         //Uso de for para hacer aparecer varios enemigos
         for(var i = 0;i < 2000 / distanciaEntreEnemigos;i++){
             var x = posicionInicialX +i * distanciaEntreEnemigos;
-            this.Enemigo.create(x , 20,'SantaCompa').anims.play('enemigo-idle', true)
-            .setGravityY(300)
+            this.Enemigo.create(x , 150,'SantaCompa').anims.play('enemigo-idle', true)
             .setOrigin(0 , 2)
+            .setGravityY(300)
+            .setScale(1.5)
         }
 
         this.Enemigo.children.iterate(function (child) {
