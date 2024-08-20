@@ -61,15 +61,15 @@ function preload () {
     //Cargar enemigos
     this.load.spritesheet(
         'SantaCompa',
-        'assets/Personajes/Enemigos/SantaCompa.png',
-        { frameWidth:16 , frameHeight:16}
+        'assets/Personajes/Enemigos/FACELESSMINIONS.png',
+        { frameWidth:18 , frameHeight:18}
         
     )
         //Muerte enemigo
     this.load.spritesheet(
             'Santa_muerte',
-            'assets/Personajes/Enemigos/SantaCompaña_muerte.png',
-            { frameWidth:64 , frameHeight: 64 }
+            'assets/Personajes/Enemigos/deadEnemiminion.png',
+            { frameWidth:18 , frameHeight: 18 }
     )
     //Cargar GameCoin(percebe)
     this.load.spritesheet(
@@ -216,7 +216,7 @@ function create () {
             this.Enemigo.create(x , 150,'SantaCompa').anims.play('enemigo-idle', true)
             .setOrigin(0 , 2)
             .setGravityY(300)
-            .setScale(1.5)
+            .setVelocityX(5)
         }
 
         this.Enemigo.children.iterate(function (child) {
@@ -351,7 +351,7 @@ function create () {
         key:'enemigo-idle',
         frames: this.anims.generateFrameNumbers(
             'SantaCompa',
-            { start:0 , end: 3}
+            { start:2 , end: 3}
         ),
         frameRate: 5,
         repeat: -1
@@ -361,9 +361,9 @@ function create () {
         key:'Muerte_Santa',
         frames: this.anims.generateFrameNumbers(
             'Santa_muerte',
-            { start:0 , end:5}
+            { start:8 , end:12}
         ),
-        frameRate:12,
+        frameRate:10,
         repeat:-1
 
     })
