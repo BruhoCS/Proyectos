@@ -1,0 +1,19 @@
+import { RestartButton } from "./botones/button.js";
+
+export class GameOver extends Phaser.Game {
+  constructor() {
+    super({ key: 'GameOver' });
+    this.restartButton = new RestartButton(this);
+  }
+
+  preload() {
+    this.load.image('GameOver', './botones/Imagenes/Emoji Death.png');
+    this.restartButton.preload();
+  }
+  
+  create() {
+    this.add.image(410, 250, 'background');
+    this.restartButton.create();
+    this.gameoverImage = this.add.image(400, 90, 'gameover');
+  }
+}
