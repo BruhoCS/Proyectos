@@ -1,3 +1,4 @@
+
 /*Global Phaser */
 const config ={
 
@@ -28,7 +29,6 @@ const config ={
 //Inicializar el juego
 new Phaser.Game(config)
     //this -> game -> juego que estamos construyendo
-
 //Funciones juego
 function preload () {
     //Cargar Cielo
@@ -76,6 +76,9 @@ function preload () {
         'assets/Objetos/Moneda(Percebe)/percebe2D.png',
         { frameWidth: 16 , frameHeight: 16 }
     )
+
+    //GameOver
+    this.load.image('GameOver', './botones/Imagenes/EmojiDeath.png');
 }
 
 function create () {
